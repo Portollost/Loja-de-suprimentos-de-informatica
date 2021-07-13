@@ -16,19 +16,18 @@ public class loja{
 		estoque[2] = new Produto("Teclado / mouse sem fio", 125.00);
 		estoque[3] = new Produto("Monitor LED 24", 692.00);
 		
-		System.out.println("Loja de suprimentos de Informática");
-		System.out.println("\nEscolha um produto\n");
-		System.out.println("#Estoque:");
-		
-		for (int i = 0; i < estoque.length; i++)
-			System.out.println("("+i+") "+estoque[i].getDescricao()+" || "+estoque[i].getValor());
-		
-		System.out.println("("+estoque.length+") Sair");
-		
 		do {
+			System.out.println("\nLoja de suprimentos de Informática");
+			System.out.println("\nEscolha um produto\n");
+			System.out.println("#Estoque:");
+			
+			for (int i = 0; i < estoque.length; i++)
+				System.out.println("("+i+") "+estoque[i].getDescricao()+" || "+estoque[i].getValor());
+			
+			System.out.println("("+estoque.length+") Sair");
 			opcao = scan.nextInt();
 			if (opcao != estoque.length) {
-				System.out.println("Quantidade: ");
+				System.out.print("Quantidade: ");
 				Item i = new Item(scan.nextInt(), estoque[opcao].getValor());
 				compra.setItem(i);
 			}
